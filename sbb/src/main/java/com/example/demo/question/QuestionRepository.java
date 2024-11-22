@@ -1,4 +1,4 @@
-package com.mysite.sbb.question;
+package com.example.demo.question;
 
 import java.util.List;
 

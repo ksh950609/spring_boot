@@ -1,4 +1,5 @@
-package com.mysite.sbb.question;
+package com.example.demo.question;
+
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
