@@ -1,11 +1,11 @@
-package com.example.demo.question;
+package com.mysite.sbb.question;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
-import com.example.demo.Answer.Answer;
-import com.example.demo.user.SiteUser;
+import com.mysite.sbb.answer.Answer;
+import com.mysite.sbb.user.SiteUser;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -23,25 +23,26 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Question {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
-    @Column(length = 200)
-    private String subject;
+	@Column(length = 200)
+	private String subject;
 
-    @Column(columnDefinition = "TEXT")
-    private String content;
+	@Column(columnDefinition = "TEXT")
+	private String content;
 
-    private LocalDateTime createDate;
+	private LocalDateTime createDate;
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE) 
-    private List<Answer> answerList; 
-    
-    @ManyToOne
-    private SiteUser author;
-    
-    private LocalDateTime modifyDate;
-    @ManyToMany
+	@OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
+	private List<Answer> answerList;
+
+	@ManyToOne
+	private SiteUser author;
+
+	private LocalDateTime modifyDate;
+	
+	@ManyToMany
     Set<SiteUser> voter;
 }
